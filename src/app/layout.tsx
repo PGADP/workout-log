@@ -24,17 +24,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <header className="border-b p-4 flex gap-4">
+          <a href="/">Accueil</a>
+          <a href="/dashboard">Dashboard</a>
+          <a href="/login" className="ml-auto">Login</a>
+        </header>
         {children}
       </body>
     </html>
   );
 }
-// dans <body>
-<header className="border-b p-4 flex gap-4">
-  <a href="/">Accueil</a>
-  <a href="/dashboard">Dashboard</a>
-  <a href="/login" className="ml-auto">Login</a>
-</header>
