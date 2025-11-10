@@ -10,7 +10,7 @@ export default function LoginPage(){
     e.preventDefault()
     const { error } = await supabase.auth.signInWithOtp({
       email,
-      options: { emailRedirectTo: `${window.location.origin}/dashboard` }
+      options: { emailRedirectTo: "https://workout-log-roan.vercel.app/dashboard" }
     })
     if (error) alert(error.message)
     else setSent(true)
