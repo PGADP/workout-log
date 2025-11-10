@@ -8,13 +8,15 @@ export default function LoginPage(){
 
   async function onSubmit(e: React.FormEvent){
     e.preventDefault()
-    const { error } = await supabase.auth.signInWithOtp({
-      email,
-      options: { emailRedirectTo: "https://workout-log-roan.vercel.app/dashboard" }
-    })
+     const { error } = await supabase.auth.signInWithOtp({
+  email,
+  options: { emailRedirectTo: `${window.location.origin}/dashboard` }
+})
     if (error) alert(error.message)
     else setSent(true)
   }
+
+
 
   return (
     <div className="max-w-sm mx-auto p-6">
