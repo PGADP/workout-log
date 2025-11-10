@@ -75,7 +75,9 @@ export async function POST(req: Request) {
     // Générer le PDF
     const pdfBytes = await pdfDoc.save()
 
-    return new NextResponse(pdfBytes, {
+    const buffer = Buffer.from(pdfBytes)
+
+return new NextResponse(buffer, {
       headers: {
         'Content-Type': 'application/pdf',
         'Content-Disposition': 'attachment; filename="workouts.pdf"',
