@@ -32,3 +32,9 @@ export default function RootLayout({
     </html>
   );
 }
+// dans <body>
+<header className="border-b p-4 flex gap-4">
+  <a href="/">Accueil</a>
+  <a href="/dashboard">Dashboard</a>
+  <a href="/login" className="ml-auto">Login</a>
+</header>
